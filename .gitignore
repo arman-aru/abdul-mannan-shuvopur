@@ -1,0 +1,21 @@
+# ব্যক্তিগত নোট ও আলাদা সাইট: পাবলিক রিপোতে যাবে না
+context/
+we-love-shuvopur/
+.DS_Store
+
+# বড় আসল ভিডিও (ওয়েবের জন্য ছোট সংস্করণ news24-mannan.mp4 যাবে)
+video/news24-original.mp4
+
+# সাইটে ব্যবহার হয় না এমন ছবি
+images/bnp-flag.png
+images/bnp-leader-khaleda.jpg
+images/bnp-leader-tarique.jpg
+images/bnp-leader-ziaur.jpg
+images/business-meeting.jpg
+images/mannan-office.jpg
+images/mannan-portrait.jpg
+images/mp-feni1-winner.jpg
+images/mp-flag-event.jpg
+images/mp-quote-card.jpg
+images/news-pm-good-candidates.jpg
+images/rally-oct31-poster.jpg

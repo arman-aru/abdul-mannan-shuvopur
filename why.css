@@ -1,0 +1,209 @@
+/* প্রচারণা সেকশন: কেন তিনি, কেমন চেয়ারম্যান চাই, ভোটের আহ্বান */
+
+/* ---------- কেন আব্দুল মান্নান মিয়াজী ---------- */
+.why { padding: 70px 0 110px; }
+.why__intro { text-align: center; max-width: 860px; margin: 0 auto 64px; }
+.why__intro .title { max-width: none; font-size: 64px; }
+.why__intro .title span { color: var(--red-600); }
+.why__intro p { color: var(--muted); font-size: 20px; margin-top: 14px; }
+
+.reason-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.reason {
+  position: relative; overflow: hidden;
+  padding: 34px 30px 30px; border-radius: 26px;
+  background: var(--paper); border: 1px solid var(--line);
+  transition: transform .3s, box-shadow .3s;
+}
+.reason:hover { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(11,29,54,.14); }
+.reason__no {
+  display: block; margin-bottom: 14px;
+  font-family: var(--font-display); font-size: 20px; line-height: 1;
+  color: var(--red-600);
+}
+.reason:last-child { grid-column: span 2; }
+.reason--hero .photo::after { display: none; }
+.reason__icon {
+  width: 58px; height: 58px; border-radius: 18px;
+  display: grid; place-items: center; font-size: 28px;
+  background: var(--cream); margin-bottom: 20px;
+}
+.reason h3 { font-family: var(--font-display); font-weight: 400; font-size: 27px; line-height: 1.3; color: var(--green-900); margin-bottom: 10px; }
+.reason p { font-size: 16.5px; color: var(--muted); }
+.reason__proof {
+  margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--line);
+  font-size: 14.5px; color: var(--green-700); font-weight: 600;
+}
+.reason__proof::before { content: "প্রমাণ: "; color: var(--red-600); }
+
+.reason--hero { grid-column: span 2; grid-row: span 2; background: var(--green-700); color: #fff; border: 0; display: flex; flex-direction: column; justify-content: flex-end; min-height: 520px; }
+.reason--hero .photo { position: absolute; inset: 0; border-radius: 0; background-image: linear-gradient(180deg, rgba(11,29,54,0) 30%, rgba(11,29,54,.92) 80%), url("images/rally-oct31.jpg"), linear-gradient(135deg, #2d5b9a, #0b1d36); }
+.reason--hero > *:not(.photo) { position: relative; }
+.reason--hero h3 { color: #fff; font-size: 40px; }
+.reason--hero p { color: rgba(255,255,255,.85); font-size: 18px; }
+.reason--hero .reason__proof { color: var(--gold-400); border-color: rgba(255,255,255,.25); }
+.reason--hero .reason__proof::before { color: #fff; }
+.reason--red { background: var(--red-600); color: #fff; border: 0; }
+.reason--red h3 { color: #fff; }
+.reason--red p { color: rgba(255,255,255,.88); }
+.reason--red .reason__icon { background: rgba(255,255,255,.15); }
+.reason--red .reason__proof { color: var(--gold-400); border-color: rgba(255,255,255,.3); }
+.reason--red .reason__proof::before { color: #fff; }
+.reason--gold { background: var(--gold-400); border: 0; }
+.reason--gold .reason__icon { background: rgba(255,255,255,.45); }
+.reason--gold p { color: var(--green-900); }
+
+/* ---------- ইউনিয়নের তথ্য (সূত্র: subhapurup.feni.gov.bd ও আদমশুমারি ২০২২) ---------- */
+.union-facts {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  margin-bottom: 40px; border-top: 2px solid var(--green-900); border-bottom: 1px solid var(--line);
+}
+.union-facts div { padding: 22px 20px; border-right: 1px solid var(--line); }
+.union-facts div:last-child { border-right: 0; }
+.union-facts b { display: block; font-family: var(--font-display); font-weight: 400; font-size: 36px; line-height: 1.2; color: var(--green-800); }
+.union-facts span { font-size: 15px; color: var(--muted); }
+.ward-panel { padding: 0; overflow: hidden; }
+.ward-panel__body { padding: 28px 32px 32px; }
+.ward-panel h3#ward-villages { font-size: 32px; margin-bottom: 4px; }
+.ward-note { font-size: 15px; color: var(--red-700); font-weight: 600; }
+.voter-info { margin: 16px 0 18px; border-top: 1px solid rgba(11,29,54,.2); }
+.voter-info div { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(11,29,54,.2); font-size: 15px; line-height: 1.5; }
+.voter-info dt { font-weight: 700; }
+.ward-pledge-title { font-weight: 700; font-size: 15px; }
+.ward-panel ul { margin: 6px 0 22px; }
+.ward-panel li { padding: 6px 0; font-size: 16px; }
+
+/* ---------- আমরা কেমন চেয়ারম্যান চাই ---------- */
+.checklist { background: var(--green-900); color: #fff; }
+.checklist .container { display: grid; grid-template-columns: 460px 1fr; gap: 80px; align-items: start; }
+.checklist .title { color: #fff; }
+.checklist__lead { color: rgba(255,255,255,.75); margin-top: 18px; }
+.checklist__sign {
+  margin-top: 40px; padding: 28px; border-radius: 22px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  font-family: var(--font-display); font-size: 26px; line-height: 1.5;
+}
+.checklist__sign b { color: var(--gold-400); font-weight: 400; }
+.check-table { border-radius: 26px; overflow: hidden; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); }
+.check-row {
+  display: grid; grid-template-columns: 1fr 190px; align-items: center;
+  padding: 22px 30px; border-bottom: 1px solid rgba(255,255,255,.08);
+  transition: background .25s;
+}
+.check-row:last-child { border-bottom: 0; }
+.check-row:hover { background: rgba(255,255,255,.05); }
+.check-row--head { background: rgba(255,255,255,.07); font-size: 15px; color: rgba(255,255,255,.65); padding: 16px 30px; }
+.check-row strong { display: block; font-family: var(--font-display); font-weight: 400; font-size: 24px; }
+.check-row small { color: rgba(255,255,255,.6); font-size: 15px; }
+.tick {
+  justify-self: end; display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 18px; border-radius: 999px;
+  background: var(--gold-400); color: var(--green-900);
+  font-weight: 700; font-size: 15px;
+}
+.tick::before {
+  content: "✓"; width: 22px; height: 22px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--green-700); color: #fff; font-size: 13px;
+}
+
+/* ---------- ভোটের আহ্বান ---------- */
+.vote {
+  position: relative; overflow: hidden;
+  padding: 110px 0; text-align: center; color: #fff;
+  background:
+    radial-gradient(700px 400px at 50% 120%, rgba(240,194,75,.35), transparent 70%),
+    linear-gradient(135deg, var(--red-700), var(--red-600));
+}
+.vote__big { font-family: var(--font-display); font-size: 92px; line-height: 1.15; }
+.vote__big span { color: var(--gold-400); }
+.vote p { max-width: 720px; margin: 22px auto 40px; font-size: 21px; color: rgba(255,255,255,.9); }
+.vote__actions { display: flex; justify-content: center; gap: 16px; }
+.vote__ring { position: absolute; border-radius: 50%; border: 2px solid rgba(255,255,255,.12); pointer-events: none; }
+.vote__ring--1 { width: 700px; height: 700px; left: -260px; top: -300px; }
+.vote__ring--2 { width: 500px; height: 500px; right: -160px; bottom: -260px; }
+.reason--hero .reason__no, .reason--red .reason__no { color: var(--gold-400); }
+
+/* ---------- ভোটকেন্দ্র খুঁজুন ---------- */
+.center-finder { background: var(--cream); border-top: 1px solid var(--line); }
+.center-finder .container { display: grid; grid-template-columns: 1fr 520px; gap: 80px; align-items: center; }
+.center-finder__lead { color: var(--muted); margin: 18px 0 30px; max-width: 560px; }
+.center-steps { list-style: none; display: grid; gap: 12px; }
+.center-steps li { display: flex; align-items: center; gap: 16px; font-size: 18px; }
+.center-steps b {
+  width: 40px; height: 40px; flex: none; border-radius: 50%;
+  display: grid; place-items: center;
+  border: 2px solid var(--green-700); color: var(--green-700);
+  font-family: var(--font-display); font-weight: 400; font-size: 20px;
+}
+.center-card {
+  padding: 40px; border-radius: 28px; background: var(--paper);
+  border: 1px solid var(--line); box-shadow: 0 30px 60px rgba(11,29,54,.1);
+}
+.center-card__label { display: block; font-weight: 600; margin-bottom: 8px; }
+.center-card__input {
+  width: 100%; padding: 18px 20px; border-radius: 16px;
+  border: 2px solid var(--line); background: #fff;
+  font-family: var(--font-body); font-size: 24px; letter-spacing: .08em; color: var(--ink);
+  transition: border-color .2s;
+}
+.center-card__input:focus { outline: none; border-color: var(--green-500); }
+.center-card__hint { font-size: 14px; color: var(--muted); margin: 8px 0 0; }
+.center-card__error { margin-top: 10px; font-size: 15px; font-weight: 600; color: var(--red-700); }
+.center-card__btn { width: 100%; justify-content: center; margin-top: 20px; }
+.center-result { margin-top: 22px; padding: 22px; border-radius: 18px; background: var(--green-900); color: #fff; }
+.center-result__label { font-size: 14px; color: rgba(255,255,255,.7); }
+.center-result__sms {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin: 6px 0 16px; padding: 14px 16px; border-radius: 12px;
+  background: rgba(255,255,255,.08); font-family: monospace; font-size: 22px; letter-spacing: .05em;
+}
+.center-result__sms small { font-family: var(--font-body); font-size: 14px; color: var(--gold-400); letter-spacing: 0; }
+.center-result__note { font-size: 13.5px; color: rgba(255,255,255,.65); margin-top: 12px; }
+.center-card__privacy { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line); font-size: 14px; color: var(--green-700); }
+.center-option {
+  display: block; padding: 22px 24px; margin-bottom: 14px; border-radius: 18px;
+  border: 2px solid var(--line); background: #fff;
+  transition: border-color .2s, transform .2s;
+}
+.center-option:hover { border-color: var(--green-500); transform: translateY(-2px); }
+.center-option strong { display: block; font-family: var(--font-display); font-weight: 400; font-size: 26px; color: var(--green-900); margin: 6px 0 2px; }
+.center-option span:last-child { font-size: 15px; color: var(--muted); }
+.center-option__tag { display: inline-block; padding: 3px 12px; border-radius: 999px; background: var(--green-700); color: #fff; font-size: 13px; font-weight: 600; }
+.center-card .center-card__hint { margin-top: 12px; }
+.center-result__sms small { white-space: nowrap; }
+.ec-app { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--line); }
+.ec-app__head { display: flex; gap: 14px; align-items: center; }
+.ec-app__head img { border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,.12); }
+.ec-app__head strong { display: block; font-size: 17px; color: var(--green-900); }
+.ec-app__head span { font-size: 13.5px; color: var(--muted); }
+.ec-app__text { font-size: 15px; color: var(--muted); margin: 12px 0 14px; }
+.store-badges { display: flex; gap: 12px; }
+.store-badge {
+  flex: 1; display: flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: 12px;
+  background: #000; color: #fff; border: 1px solid #555;
+  transition: transform .2s;
+}
+.store-badge:hover { transform: translateY(-2px); }
+.store-badge span { font-size: 19px; font-weight: 600; line-height: 1.1; font-family: -apple-system, "Segoe UI", Roboto, sans-serif; }
+.store-badge small { display: block; font-size: 11px; font-weight: 400; font-family: var(--font-body); opacity: .85; }
+.sms-row { margin-bottom: 12px; }
+.sms-row__label { display: block; font-size: 14px; color: rgba(255,255,255,.75); margin-bottom: 4px; }
+.sms-row__value {
+  display: block; padding: 12px 16px; border-radius: 12px;
+  background: rgba(255,255,255,.1); border: 1px dashed rgba(255,255,255,.3);
+  font-family: monospace; font-size: 24px; letter-spacing: .06em; color: #fff;
+}
+.sms-row__value--to { font-family: var(--font-display); font-size: 30px; letter-spacing: .1em; color: var(--gold-400); }
+.center-result .btn { margin-top: 4px; }
+.sms-row__box { position: relative; }
+.sms-row__box .sms-row__value { padding-right: 130px; }
+.copy-btn {
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+  padding: 8px 14px; border-radius: 10px; border: 0; cursor: pointer;
+  background: #fff; color: var(--green-900);
+  font-family: var(--font-body); font-weight: 600; font-size: 14px;
+  transition: background .2s, color .2s;
+}
+.copy-btn:hover { background: var(--gold-400); }
+.copy-btn.is-copied { background: var(--green-500); color: #fff; }

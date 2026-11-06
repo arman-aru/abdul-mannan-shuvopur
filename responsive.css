@@ -1,0 +1,336 @@
+/* =========================================================
+   রেসপন্সিভ: ডেস্কটপ (ডিফল্ট) → ট্যাবলেট (≤১১০০, ≤৯০০) → মোবাইল (≤৬০০)
+   এই ফাইলটি সব স্টাইলশিটের পরে লোড হয়।
+   ========================================================= */
+
+/* ---------- নিচের স্ক্রলবার ঠিক করা: স্থির প্রস্থ বাদ ---------- */
+html, body { overflow-x: clip; }
+body { min-width: 0; }
+.container { width: min(var(--container), calc(100% - 48px)); }
+img, video, canvas { max-width: 100%; }
+
+/* ---------- মেনু বাটন (ডেস্কটপে লুকানো) ---------- */
+.nav__toggle { display: none; }
+
+/* =========================================================
+   ছোট ডেস্কটপ / বড় ট্যাবলেট ≤ ১১০০px
+   ========================================================= */
+@media (max-width: 1100px) {
+  .nav__links a { padding: 8px 10px; font-size: 15.5px; }
+  .hero h1 { font-size: 58px; }
+  .hero__cutout { width: 520px; }
+  .title { font-size: 44px; }
+  .why__intro .title { font-size: 52px; }
+  .vote__big { font-size: 70px; }
+
+  .reason-grid { grid-template-columns: repeat(2, 1fr); }
+  .reason--hero { grid-column: span 2; grid-row: auto; min-height: 420px; }
+  .reason:last-child { grid-column: span 2; }
+
+  .journey__grid { grid-template-columns: 380px 1fr; gap: 50px; }
+  .wards__layout { grid-template-columns: 1fr 360px; gap: 36px; }
+  .checklist .container { grid-template-columns: 380px 1fr; gap: 50px; }
+  .mp .container { grid-template-columns: 320px 1fr; gap: 44px; }
+  .poster .container { grid-template-columns: 1fr 460px; gap: 44px; }
+  .poster__preview canvas { width: 460px; height: 460px; }
+  .center-finder .container { grid-template-columns: 1fr 460px; gap: 44px; }
+  .share-link .container { grid-template-columns: 1fr 460px; gap: 44px; }
+  .v-join .container { grid-template-columns: 1fr 560px; gap: 44px; }
+
+  .leaders .container { gap: 16px; }
+  .leaders__list { gap: 16px; }
+  .leaders__list b { font-size: 14px; }
+  .leaders__list span { font-size: 12.5px; }
+  .leaders__list img { width: 54px; height: 54px; }
+}
+
+/* =========================================================
+   ট্যাবলেট ≤ ৯০০px
+   ========================================================= */
+@media (max-width: 900px) {
+  body { font-size: 17px; }
+  .section { padding: 72px 0; }
+  .section__head { flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 36px; }
+  .lead { max-width: none; }
+  .title { font-size: 38px; }
+
+  /* হেডার: ☰ মেনু */
+  .nav .container { height: 70px; }
+  .nav__toggle {
+    display: grid; place-items: center; align-content: center; gap: 5px; width: 44px; height: 44px; margin-left: 10px;
+    border: 0; border-radius: 12px; background: var(--green-900); cursor: pointer;
+  }
+  .nav__toggle span { display: block; width: 20px; height: 2px; border-radius: 2px; background: #fff; transition: transform .2s, opacity .2s; }
+  .nav.is-open .nav__toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav.is-open .nav__toggle span:nth-child(2) { opacity: 0; }
+  .nav.is-open .nav__toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav__links {
+    display: none; position: absolute; left: 0; right: 0; top: 100%;
+    flex-direction: column; gap: 4px; padding: 14px 20px 20px;
+    background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 18px 30px rgba(11,29,54,.12);
+  }
+  .nav.is-open .nav__links { display: flex; }
+  .nav__links a { padding: 12px 16px; font-size: 17px; border-radius: 12px; }
+  .nav .container > .btn { margin-left: auto; padding: 11px 18px; font-size: 15px; }
+
+  /* নেতৃবৃন্দ বার: ২x২ */
+  .leaders .container { flex-wrap: wrap; padding: 14px 0; }
+  .leaders__label { padding-right: 0; border-right: 0; font-size: 18px; }
+  .leaders__list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; width: 100%; }
+
+  /* হিরো: নিচে নিচে */
+  .hero .container { grid-template-columns: 1fr; padding-bottom: 110px; }
+  .hero__copy { padding: 60px 0 20px; text-align: center; }
+  .hero h1 { font-size: 54px; white-space: normal; }
+  .hero__slogan { display: inline-block; text-align: left; font-size: 24px; }
+  .hero__actions { justify-content: center; flex-wrap: wrap; }
+  .hero__portrait { margin-bottom: -40px; }
+  .hero__cutout { width: min(480px, 90%); }
+  .stats__grid { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(2) { border-right: 0; }
+  .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+
+  /* কেন তিনি */
+  .why__intro .title { font-size: 40px; }
+
+  /* পরিচিতি */
+  .journey__grid { grid-template-columns: 1fr; }
+  .journey__photo { position: static; height: 380px; }
+
+  /* অঙ্গীকার */
+  .pledge-grid { grid-template-columns: 1fr 1fr; }
+  .pledge--feature { grid-column: span 2; grid-template-columns: 1fr 240px; }
+  .pledge:last-child { grid-column: span 2; }
+
+  /* ওয়ার্ড */
+  .union-facts { grid-template-columns: repeat(3, 1fr); }
+  .union-facts div:nth-child(3n) { border-right: 0; }
+  .union-facts div:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
+  .wards__layout { grid-template-columns: 1fr; }
+  .ward-panel { position: static; }
+
+  /* চেকলিস্ট */
+  .checklist .container { grid-template-columns: 1fr; }
+  .checklist__photo { height: 380px; }
+
+  /* এমপি */
+  .mp .container { grid-template-columns: 1fr; }
+  .mp-card { position: static; max-width: 420px; margin: 0 auto; }
+
+  /* ভিডিও */
+  .media .container { grid-template-columns: 1fr; gap: 30px; }
+
+  /* ভোটকেন্দ্র */
+  .center-finder .container { grid-template-columns: 1fr; }
+
+  /* পোস্ট জেনারেটর */
+  .poster .container { grid-template-columns: 1fr; }
+  .poster__preview { order: -1; }
+  .poster__preview canvas { width: 100%; height: auto; aspect-ratio: 1 / 1; max-width: 560px; margin: 0 auto; }
+  .share-link .container { grid-template-columns: 1fr; }
+
+  /* গ্যালারি */
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 300px 220px 220px; }
+  .g1 { grid-column: span 2; grid-row: auto; }
+
+  /* সমর্থকদের কথা ও যোগাযোগ */
+  .quote-row { grid-template-columns: 1fr; }
+  .contact__grid { grid-template-columns: 1fr 1fr; }
+
+  /* ভোটের আহ্বান */
+  .vote { padding: 72px 0 84px; }
+  .vote__big { font-size: 52px; }
+  .vote .bnp__head img { width: 230px; }
+  .vote .bnp__line { width: 80px; }
+  .vote::before { width: 480px; height: 480px; right: -200px; }
+
+  /* ফুটার */
+  .footer__top { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .footer__big { font-size: 44px; }
+  .footer__party { grid-template-columns: 1fr 1fr; }
+  .party-id { grid-column: span 2; }
+  .footer__bottom { flex-direction: column; gap: 8px; }
+
+  /* স্বেচ্ছাসেবক পাতা */
+  .v-hero .container { grid-template-columns: 1fr; padding: 64px 0 72px; gap: 40px; }
+  .v-hero h1 { font-size: 52px; }
+  .role-grid { grid-template-columns: 1fr 1fr; }
+  .role--feature { grid-row: auto; grid-column: span 2; }
+  .v-join .container { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   মোবাইল ≤ ৬০০px
+   ========================================================= */
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .container { width: calc(100% - 32px); }
+  .section { padding: 56px 0; }
+  .title { font-size: 30px; }
+  .kicker { font-size: 15px; }
+  .btn { padding: 13px 22px; font-size: 16px; }
+
+  /* হেডার */
+  .brand__name { font-size: 18px; }
+  .brand__sub { font-size: 11.5px; }
+  .brand__photo { width: 40px; height: 40px; }
+  .nav .container > .btn { display: none; }
+  .nav__links .nav__cta { display: block; }
+
+  /* নেতৃবৃন্দ বার */
+  .leaders__logo { width: 40px; height: 40px; }
+  .leaders__list { grid-template-columns: 1fr 1fr; gap: 10px 12px; }
+  .leaders__list img { width: 44px; height: 44px; }
+  .leaders__list li { gap: 8px; }
+  .leaders__list b { font-size: 12.5px; }
+  .leaders__list span { font-size: 11px; }
+
+  /* হিরো */
+  .hero__copy { padding-top: 40px; }
+  .eyebrow { font-size: 13px; }
+  .hero h1 { font-size: 40px; }
+  .hero__role { font-size: 18px; }
+  .hero__slogan { font-size: 20px; margin: 22px 0 28px; }
+  .hero__actions .btn { width: 100%; justify-content: center; }
+  .stats__grid { margin-top: -60px; }
+  .stat { padding: 20px 18px; }
+  .stat b { font-size: 32px; }
+  .stat span { font-size: 14px; }
+
+  /* কেন তিনি */
+  .why { padding: 40px 0 64px; }
+  .why__intro { margin-bottom: 36px; }
+  .why__intro .title { font-size: 30px; }
+  .why__intro p { font-size: 17px; }
+  .reason-grid { grid-template-columns: 1fr; }
+  .reason--hero, .reason:last-child { grid-column: auto; }
+  .reason--hero { min-height: 380px; }
+  .reason--hero h3 { font-size: 28px; }
+
+  /* পরিচিতি */
+  .journey__photo { height: 260px; }
+  .timeline { padding-left: 50px; }
+  .step::before { left: -50px; }
+  .step h3 { font-size: 24px; }
+
+  /* অঙ্গীকার */
+  .pledge-grid { grid-template-columns: 1fr; }
+  .pledge--feature, .pledge:last-child { grid-column: auto; grid-template-columns: 1fr; }
+  .pledge:last-child .pledge__no { grid-row: auto; }
+  .pledge--feature .photo { height: 200px; }
+  .pledge__no { font-size: 52px; }
+  .pledges::before { font-size: 140px; }
+
+  /* ওয়ার্ড */
+  .union-facts { grid-template-columns: 1fr 1fr; }
+  .union-facts div { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .union-facts div:nth-child(2n) { border-right: 0; }
+  .union-facts b { font-size: 28px; }
+  .ward-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .ward { padding: 16px 14px; }
+  .ward b { font-size: 26px; }
+  .ward p { font-size: 13px; }
+  .ward-panel__body { padding: 22px 20px 24px; }
+  .voter-info div { grid-template-columns: 1fr; gap: 2px; }
+
+  /* চেকলিস্ট */
+  .check-row { grid-template-columns: 1fr auto; padding: 18px 18px; gap: 10px; }
+  .check-row strong { font-size: 19px; }
+  .check-row--head { padding: 14px 18px; }
+  .checklist__sign { font-size: 21px; }
+  .checklist__photo { height: 300px; }
+
+  /* এমপি */
+  .mp-quotes { grid-template-columns: 1fr; }
+  .mp-quote blockquote { font-size: 21px; }
+  .mp-link { font-size: 18px; padding: 18px 20px; }
+  .mp-photos { grid-template-columns: 1fr; }
+  .mp-photos .photo { height: 240px; }
+  .mp-card__photo { height: 320px; }
+
+  /* ভিডিও প্লেয়ার */
+  .player__big { width: 68px; height: 68px; }
+  .player__big svg { width: 30px; height: 30px; }
+  .player__bar { left: 8px; right: 8px; bottom: 8px; gap: 6px; padding: 6px 8px; }
+  .player__time { min-width: 0; font-size: 12px; }
+  .player__btn { width: 32px; height: 32px; }
+
+  /* ভোটকেন্দ্র */
+  .center-card { padding: 24px 20px; }
+  .center-card__input { font-size: 20px; }
+  .sms-row__value { font-size: 19px; padding-right: 110px; }
+  .copy-btn { padding: 7px 10px; font-size: 13px; }
+  .store-badges { flex-direction: column; }
+
+  /* পোস্ট জেনারেটর */
+  .poster__actions { flex-direction: column; }
+  .poster__actions .btn { width: 100%; justify-content: center; }
+  .poster__file { flex-wrap: wrap; }
+  .share-box { padding: 22px 18px; }
+  .share-box__url { padding: 14px; padding-bottom: 60px; }
+  .share-box__url .copy-btn { top: auto; bottom: 10px; transform: none; }
+  .share-box__actions { flex-direction: column; }
+
+  /* গ্যালারি */
+  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: 240px; }
+  .g1 { grid-column: auto; }
+
+  /* সমর্থকদের কথা ও যোগাযোগ */
+  .quote { padding: 28px 24px; }
+  .quote--big blockquote { font-size: 25px; }
+  .quote blockquote { font-size: 21px; }
+  .alert { flex-direction: column; align-items: flex-start; padding: 20px; }
+  .contact__grid { grid-template-columns: 1fr; }
+
+  /* ভোটের আহ্বান */
+  .vote__big { font-size: 34px; }
+  .vote p { font-size: 17px; }
+  .vote__actions { flex-direction: column; align-items: stretch; }
+  .vote .bnp__head { gap: 14px; margin-bottom: 30px; }
+  .vote .bnp__head img { width: 190px; }
+  .vote .bnp__line { width: 40px; }
+
+  /* ফুটার */
+  .footer { padding: 50px 0 30px; }
+  .footer__big { font-size: 32px; }
+  .footer__party { grid-template-columns: 1fr; gap: 34px; }
+  .party-id { grid-column: auto; flex-direction: column; }
+  .party-facts div { grid-template-columns: 120px 1fr; }
+
+  /* স্বেচ্ছাসেবক পাতা */
+  .v-hero h1 { font-size: 38px; }
+  .v-hero__lead { font-size: 17px; }
+  .v-hero__actions { flex-direction: column; }
+  .v-hero__actions .btn { justify-content: center; }
+  .role-grid { grid-template-columns: 1fr; }
+  .role--feature { grid-column: auto; }
+  .role--feature h3 { font-size: 28px; }
+  .v-form { padding: 24px 18px; }
+  .v-row { grid-template-columns: 1fr; gap: 0; }
+  .v-join__photo { height: 240px; }
+}
+
+/* ডেস্কটপে মেনুর ভেতরের "স্বেচ্ছাসেবক হোন" লিংক লুকানো (মোবাইলে দেখায়) */
+.nav__links .nav__cta { display: none; }
+@media (max-width: 600px) {
+  .nav__links .nav__cta { display: block; background: var(--red-600); color: #fff; text-align: center; margin-top: 6px; }
+}
+
+/* লুকানো ফাইল-ইনপুট যেন পাতা চওড়া না করে (নিচের স্ক্রলবারের আসল কারণ) */
+.poster__field input.visually-hidden, input.visually-hidden {
+  position: absolute !important; width: 1px !important; height: 1px !important;
+  padding: 0 !important; margin: -1px !important; border: 0 !important; overflow: hidden; clip: rect(0 0 0 0);
+}
+.poster__file { position: relative; }
+
+/* নেতৃবৃন্দ: লোগো + লেবেল এক লাইনে, চার নেতা নিচে পূর্ণ প্রস্থে */
+@media (max-width: 900px) {
+  .leaders__list { flex: 0 0 100%; }
+}
+
+/* মোবাইলে এমপির নাম কার্ডের ভেতরে */
+@media (max-width: 600px) {
+  .mp-card { width: 100%; }
+  .mp-card h3 { font-size: 24px; padding: 0 16px; line-height: 1.35; }
+  .mp-card p { font-size: 14.5px; }
+}
